@@ -1,5 +1,7 @@
 import React from "react";
 
+const MY_KEY = process.env.REACT_APP_API_KEY;
+
 export default function SearchMovies(){
     
     const searchMovies = async (event) => {
@@ -8,11 +10,11 @@ export default function SearchMovies(){
         
         const query = "Galaxy Quest";
         
-        const url = `https://api.tmdb.org/3/search/movie?api_key=496e7112180f6c0846886cf52e631b38&language=en-US&query=${query}&page=1&include_adult=false`;
+        const url = `https://api.tmdb.org/3/search/movie?api_key=${MY_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
         
         try {
-            const res = await fetch(url);
-            const data  = await res.json();
+            const response = await fetch(url);
+            const data  = await response.json();
             console.log(data);
         } catch(err){
             console.error(err);
