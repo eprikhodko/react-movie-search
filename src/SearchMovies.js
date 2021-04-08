@@ -1,14 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
 const MY_KEY = process.env.REACT_APP_API_KEY;
 
 export default function SearchMovies(){
     
+    const [query, setQuery] = useState('');
+
     const searchMovies = async (event) => {
         event.preventDefault();
-        console.log("submitting");
-        
-        const query = "Galaxy Quest";
         
         const url = `https://api.tmdb.org/3/search/movie?api_key=${MY_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
         
@@ -24,8 +23,14 @@ export default function SearchMovies(){
     return (
         <form className="form" onSubmit={searchMovies}>
             <label className="label" htmlFor="query">Movie Name</label>
-            <input className="input" type="text" name="query"
-                placeholder="i.e. Galaxy Quest"/>
+            <input 
+                className="input" 
+                type="text" 
+                name="query"
+                placeholder="i.e. Galaxy Quest" 
+                value={query} 
+                onChange={(event) => setQuery(event.target.value)}
+            />
             <button className="button" type="submit">Search</button>
         </form>
     )
