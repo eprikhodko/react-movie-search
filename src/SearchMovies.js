@@ -7,21 +7,26 @@ export default function SearchMovies() {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
 
+
+    // Search movies
     const searchMovies = async (event) => {
+        // prevent page reload after clicking Search button
         event.preventDefault();
         
-        
-
-        const url = `https://api.tmdb.org/3/search/movie?api_key=${MY_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+        // check if search field is empty
+        if (query) {
+            const url = `https://api.tmdb.org/3/search/movie?api_key=${MY_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
         
         try {
             const response = await fetch(url);
             const data  = await response.json();
             setMovies(data.results);
-        } catch(err){
+        } catch(err) {
             console.error(err);
         }
+        // clear search field after clicking Search button
         setQuery('')
+        }
     }
 
     return (
@@ -34,7 +39,11 @@ export default function SearchMovies() {
                     name="query"
                     placeholder="i.e. Star Wars" 
                     value={query} 
-                    onChange={(event) => setQuery(event.target.value)}
+                    onChange={(event) => {
+                        setQuery(event.target.value)
+                        console.log(query)
+                        }
+                    }
                 />
                 <button className="button" type="submit">Search</button>
             </form>
