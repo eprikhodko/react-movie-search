@@ -41,7 +41,6 @@ export default function SearchMovies() {
                     value={query} 
                     onChange={(event) => {
                         setQuery(event.target.value)
-                        console.log(query)
                         }
                     }
                 />
