@@ -33,8 +33,8 @@ Project created with:
 
 ## Features 
 
-Search for a movie through database
-Mobile and Desktop version
+- Search for a movie through database
+- Mobile and Desktop version
 
 ## Sources
 
@@ -45,4 +45,6 @@ Data is fetching from The Movie Database API: https://developers.themoviedb.org/
 ## To-Do
 
 - add proper styles for mobile and desktop version
-- view movie poster
+- view movie info
+- add some sort of loading animation while posters are loading
+- remove default styles from search field and search button

@@ -4,7 +4,7 @@ const MY_KEY = process.env.REACT_APP_API_KEY;
 
 export default function SearchMovies() {
     
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState("");
     const [movies, setMovies] = useState([]);
 
 
@@ -24,8 +24,9 @@ export default function SearchMovies() {
         } catch(err) {
             console.error(err);
         }
+
         // clear search field after clicking Search button
-        setQuery('')
+        setQuery("")
         }
     }
 
@@ -47,8 +48,17 @@ export default function SearchMovies() {
                 <button className="button" type="submit">Search</button>
             </form>
             <div className="card-list">
-                {movies.map(movie => movie.title)}
-            </div>
+
+                {movies.filter(movie => movie.poster_path).map(movie => (
+                    <div className="card" key={movie.id}>
+                        <img className="card--image"
+                            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                            alt={movie.title + " poster"}
+                            />
+                    </div>
+                ))}
+
+            </div>    
         </div>
         
     )

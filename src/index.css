@@ -38,16 +38,18 @@ small {
 .container {
   margin: 0 auto;
   max-width:1000px;
-  padding: 40px;
+  padding: 2em;
 }
 
 .title {
+  margin-top: 0;
   font-size: 4.4rem;
   text-align: center
 }
 
 .form {
   display:grid;
+  margin-bottom: 2em;
 }
 
 .label {
