@@ -58,24 +58,34 @@ small {
   text-transform: uppercase;
 }
 
-.input {
+.search-input,
+.search-button
+{
+  border-radius: 20px;
+}
+
+.search-input {
   font-size: 1.6rem;
   padding: 0.5rem 2rem;
   line-height: 2.8rem;
-  border-radius: 20px;
   border: 1px solid #ddd;
   margin-bottom: 1rem;
 }
 
-.button {
+.search-button {
   background-color: rgba(0,0,0,0.75);
   color: white;
   padding: 1rem 2rem;
   border: 1px solid rgba(0,0,0,0.75);
-  border-radius: 20px;
   font-size: 1.4rem;
   cursor: pointer;
   transition: background-color 250ms;
+}
+
+.search-input:focus, 
+.search-button:focus {
+  /* outline: 1px dashed red; */
+  /* box-shadow: 0 0 0 2px rgb(168, 66, 66); */
 }
 
 .button:hover {
@@ -93,3 +103,18 @@ small {
       margin-bottom: 0;
   }
 }
+
+/* :focus {
+  outline: 0;
+  } */
+
+  :focus {
+    /* Visible in the full-colour space */
+  box-shadow: 0 0 0 1px rgb(99, 99, 99);
+
+  /* Visible in Windows high-contrast themes */
+  outline-color: transparent;
+  outline-width: 2px;
+  outline-style: dotted;
+  }
+
