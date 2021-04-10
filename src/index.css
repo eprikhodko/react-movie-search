@@ -51,13 +51,14 @@ header {
 }
 
 .form {
-  display:grid;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2em;
 }
 
 .label {
   font-size: 1.2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5em;
   text-transform: uppercase;
   text-align: center;
 
@@ -78,11 +79,18 @@ header {
   margin-bottom: 1rem;
 }
 
+.search-input:focus {
+  /* Visible in the full-color space */
+  box-shadow: 0 0 0 1px rgb(168, 168, 168);
+  border: 0;
+}
+
 .search-button {
-  background-color: rgba(0,0,0,0.75);
+  background-color: #f18119;
   color: white;
-  padding: .5em 2em;
-  border: 1px solid rgba(0,0,0,0.75);
+  padding: .6em 2em;
+  /* border: 1px solid rgba(0,0,0,0.75); */
+  border: 0;
   font-size: 1.8rem;
   cursor: pointer;
   transition: background-color 250ms;
@@ -92,11 +100,16 @@ header {
   background-color: rgba(0,0,0,0.15);
 }
 
+.search-button:focus {
+  background-color: #404040;
+  border: 0;
+}
+
 @media (min-width:786px){
   .form {
-      grid-template-columns: auto 1fr auto;
+      /* grid-template-columns: auto 1fr auto;
       grid-gap: 1rem;
-      align-items: center;
+      align-items: center; */
   }
   
   .input {
@@ -108,13 +121,10 @@ header {
   outline: 0;
   } */
 
-  :focus {
-    /* Visible in the full-color space */
-  box-shadow: 0 0 0 1px rgb(99, 99, 99);
-
+:focus {
   /* Visible in Windows high-contrast themes */
   outline-color: transparent;
   outline-width: 2px;
   outline-style: dotted;
-  }
+}
 
