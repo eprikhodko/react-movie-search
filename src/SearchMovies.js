@@ -30,6 +30,7 @@ export default function SearchMovies() {
         }
     }
 
+
     return (
         <div className="search-movies-component">
             <form className="form" onSubmit={searchMovies}>
@@ -48,7 +49,8 @@ export default function SearchMovies() {
                 <button className="search-button" type="submit">Search</button>
             </form>
             <div className="card-list">
-
+                
+               
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="movie-card" key={movie.id}>
                         <img className="movie-card-image"
@@ -57,7 +59,9 @@ export default function SearchMovies() {
                         />
                         <div className="movie-card-content">
                             <h3 className="movie-card-title">{movie.title}</h3>
-                            <p className="release-date">Release date: {movie.release_date}</p>
+                            <p className="release-date">Release date: {movie.release_date.slice(0, 4)}</p>
+                            
+
                             {/* <p>Rating: {movie.vote_average}</p> */}
                             <p className="movie-card-description">{movie.overview}</p>
                         </div>
