@@ -44,8 +44,10 @@ Data is fetching from The Movie Database API: https://developers.themoviedb.org/
 
 ## To-Do
 
-- add proper styles for mobile and desktop version
-- view movie info
+- gather some references for mobile version
+- style mobile version
+- add font weigts
+
 - add some sort of loading animation while posters are loading
 - remove default styles from search field and search button
 - add proper button hover effect
@@ -54,4 +56,8 @@ Data is fetching from The Movie Database API: https://developers.themoviedb.org/
 - add new fonts
 - break UI into components
 - try to think what features can be added to the mobile app, to add some functionality, like sort by rating, but not to over-inflate interface. What can be added later into desktop version? 
+
+
+
+
 - maybe add some modal with movie info on click. 
