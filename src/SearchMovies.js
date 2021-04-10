@@ -59,7 +59,7 @@ export default function SearchMovies() {
                         />
                         <div className="movie-card-content">
                             <h3 className="movie-card-title">{movie.title}</h3>
-                            <p className="release-date">Release date: {movie.release_date.slice(0, 4)}</p>
+                            <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
                             
 
                             {/* <p>Rating: {movie.vote_average}</p> */}

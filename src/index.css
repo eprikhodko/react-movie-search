@@ -70,6 +70,21 @@ header {
   border-radius: 50px;
 }
 
+input[type=text] {   
+  /* Remove First */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* background-clip: padding-box; */
+
+  /* Then Style */
+  font-size: 1.6rem;
+  padding: 0.4em 2em;
+  line-height: 2.8rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
 .search-input {
   font-size: 1.6rem;
   padding: 0.4em 2em;
@@ -137,7 +152,7 @@ header {
 p {
   font-size: 1.3em;
   margin-top: .2em;
-  margin-bottom: .8em;
+  margin-bottom: .25em;
 }
 
 .release-date {
