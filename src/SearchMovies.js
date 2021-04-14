@@ -2,11 +2,10 @@ import React, {useState} from "react";
 
 const MY_KEY = process.env.REACT_APP_API_KEY;
 
-export default function SearchMovies() {
-    
+function SearchMovies() {
+
     const [query, setQuery] = useState("");
     const [movies, setMovies] = useState([]);
-
 
     // Search movies
     const searchMovies = async (event) => {
@@ -30,9 +29,22 @@ export default function SearchMovies() {
         }
     }
 
+    const movieCards = movies.filter(movie => movie.poster_path).map(movie => (
+            <div className="movie-card" key={movie.id}>
+                <img className="movie-card-image"
+                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    alt={movie.title + " poster"}
+                />
+                <div className="movie-info">
+                    <h3 className="movie-title">{movie.title}</h3>
+                    <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
+                    <p className="movie-overview">{movie.overview}</p>
+                </div>
+            </div>
+        ))
 
     return (
-        <div className="search-movies-component">
+        <div className="container-search">
             <form className="form" onSubmit={searchMovies}>
                 <label className="label" htmlFor="query">Movie Name</label>
                 <input 
@@ -48,28 +60,12 @@ export default function SearchMovies() {
                 />
                 <button className="search-button" type="submit">Search</button>
             </form>
-            <div className="card-list">
-                
-               
-                {movies.filter(movie => movie.poster_path).map(movie => (
-                    <div className="movie-card" key={movie.id}>
-                        <img className="movie-card-image"
-                            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                            alt={movie.title + " poster"}
-                        />
-                        <div className="movie-card-content">
-                            <h3 className="movie-card-title">{movie.title}</h3>
-                            <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
-                            
 
-                            {/* <p>Rating: {movie.vote_average}</p> */}
-                            <p className="movie-card-description">{movie.overview}</p>
-                        </div>
-                    </div>
-                ))}
-
+            <div className="search-results">
+                {movieCards}
             </div>    
         </div>
-        
     )
 }
+
+export default SearchMovies
