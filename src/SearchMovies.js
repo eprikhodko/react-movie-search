@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useState} from "react"
+import {Link} from "react-router-dom"
 
-const MY_KEY = process.env.REACT_APP_API_KEY;
+const MY_KEY = process.env.REACT_APP_API_KEY
 
 function SearchMovies() {
 
@@ -36,7 +37,9 @@ function SearchMovies() {
                     alt={movie.title + " poster"}
                 />
                 <div className="movie-info">
-                    <h3 className="movie-title">{movie.title}</h3>
+                    <h3 className="movie-title">
+                        <Link to={`/${movie.id}`}>{movie.title}</Link>
+                    </h3>
                     <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
                     <p className="movie-overview">{movie.overview}</p>
                 </div>
