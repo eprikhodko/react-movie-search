@@ -10,8 +10,8 @@ const MY_KEY = process.env.REACT_APP_API_KEY
 
 function App() {
 
-    const [query, setQuery] = useState("");
-    const [movies, setMovies] = useState([]);
+    const [query, setQuery] = useState("")
+    const [movies, setMovies] = useState([])
 
     const handleChange = event => {
         // console.log(event.target.value)
