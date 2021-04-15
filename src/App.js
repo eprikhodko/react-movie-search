@@ -1,23 +1,62 @@
-import React from "react"
+import React, {useState} from "react"
 import SearchMovies from "./SearchMovies"
 import MovieDetails from "./MovieDetails"
 
 import {Switch, Route} from "react-router-dom"
 
+const MY_KEY = process.env.REACT_APP_API_KEY
+
+
+
 function App() {
+
+    const [query, setQuery] = useState("");
+    const [movies, setMovies] = useState([]);
+
+    const handleChange = event => {
+        // console.log(event.target.value)
+        return setQuery(event.target.value)
+    }
+
+    // Search movies
+    const searchMovies = async (event) => {
+        // prevent page reload after clicking Search button
+        event.preventDefault();
+        
+        // check if search field is empty
+        if (query) {
+            const url = `https://api.tmdb.org/3/search/movie?api_key=${MY_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+        
+        try {
+            const response = await fetch(url);
+            const data  = await response.json();
+            setMovies(data.results);
+        } catch(err) {
+            console.error(err);
+        }
+
+        // clear search field after clicking Search button
+        setQuery("")
+        }
+    }
 
     return (
         <div>
             <Header />
-
+        
             <Switch>
                     <Route exact path="/">
                         <div className="container">
-                            <SearchMovies />
+                            <SearchMovies 
+                                handleChange={handleChange}
+                                query={query}
+                                searchMovies={searchMovies}
+                                movies={movies}
+                            />
                         </div>
                     </Route>
                     <Route exact path={`/:movieId`}>
-                        <MovieDetails />
+                        <MovieDetails movies={movies}/>
                     </Route>
             </Switch>
         </div>
