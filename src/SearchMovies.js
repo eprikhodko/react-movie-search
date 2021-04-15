@@ -46,6 +46,9 @@ function SearchMovies() {
             </div>
         ))
 
+    const handleChange = event => {setQuery(event.target.value)}
+                    
+            
     return (
         <div className="container-search">
             <form className="form" onSubmit={searchMovies}>
@@ -56,10 +59,7 @@ function SearchMovies() {
                     name="query"
                     placeholder="i.e. Star Wars" 
                     value={query} 
-                    onChange={(event) => {
-                        setQuery(event.target.value)
-                        }
-                    }
+                    onChange={handleChange}
                 />
                 <button className="search-button" type="submit">Search</button>
             </form>

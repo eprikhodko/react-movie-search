@@ -9,11 +9,13 @@ function App() {
     return (
         <div>
             <Header />
-            <div className="container">
-                <SearchMovies />
-            </div>
 
             <Switch>
+                    <Route exact path="/">
+                        <div className="container">
+                            <SearchMovies />
+                        </div>
+                    </Route>
                     <Route exact path={`/:movieId`}>
                         <MovieDetails />
                     </Route>
