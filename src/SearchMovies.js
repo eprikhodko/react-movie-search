@@ -3,12 +3,6 @@ import {Link} from "react-router-dom"
 
 
 function SearchMovies(props) {
-    // console.log(handleChange)
-
-    
-   
-
-
 
     const movieCards = props.movies.filter(movie => movie.poster_path).map(movie => (
             <div className="movie-card" key={movie.id}>
@@ -25,10 +19,7 @@ function SearchMovies(props) {
                 </div>
             </div>
         ))
-
-    
-                    
-            
+  
     return (
         <div className="container-search">
             <form className="form" onSubmit={props.searchMovies}>
