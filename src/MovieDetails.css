@@ -1,6 +1,52 @@
-.container-movie-details {
-    padding: 100px;
+.container-movie-backdrop {
+    /* padding: 6.4em; */
     background-size: cover;
 
     /* border: 1px solid magenta; */
+}
+
+.movie-poster {
+    max-width: 35%;
+    padding: 2em;
+    border-radius: 30px;
+}
+
+.container-overview {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-movie-details {
+    font-size: 2.5rem;
+}
+
+.title-overview {
+    font-size: 1.8rem;
+}
+
+.paragraph-overview {
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+}
+
+.button-back {
+    display: block;
+    background-color: #f18119;
+    color: white;
+    padding: .6em 2em;
+    border: 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 250ms;
+    border-radius: 50px;
+  }
+  
+.button-back:hover {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.button-back:focus {
+    background-color: #404040;
+    border: 0;
 }

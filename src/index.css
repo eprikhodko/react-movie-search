@@ -65,7 +65,7 @@ header {
 }
 
 .search-input,
-.search-button
+.button-search
 {
   border-radius: 50px;
 }
@@ -100,7 +100,7 @@ input[type=text] {
   border: 0;
 }
 
-.search-button {
+.button-search {
   background-color: #f18119;
   color: white;
   padding: .6em 2em;
@@ -110,11 +110,11 @@ input[type=text] {
   transition: background-color 250ms;
 }
 
-.search-button:hover {
+.button-search:hover {
   background-color: rgba(0,0,0,0.15);
 }
 
-.search-button:focus {
+.button-search:focus {
   background-color: #404040;
   border: 0;
 }

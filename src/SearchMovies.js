@@ -35,7 +35,7 @@ function SearchMovies({movies, searchMovies, query, handleChange}) {
                     value={query} 
                     onChange={handleChange}
                 />
-                <button className="search-button" type="submit">Search</button>
+                <button className="button-search" type="submit">Search</button>
             </form>
 
             <div className="search-results">

@@ -30,13 +30,30 @@ function MovieDetails() {
       }, []) 
 
     return (
-        <div className="container-movie-details" style={{ 
+        <div className="container-movie-details">
+            
+            <div className="container-movie-backdrop" style={{ 
             backgroundImage: `url("https://image.tmdb.org/t/p/w1000_and_h450_multi_faces${movie.backdrop_path}")`
           }}>
-            {/* <h1>Some movie details</h1> */}
+
+                <img className="movie-poster"
+                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    alt={movie.title + " poster"}
+                />            
+            </div>
             
-            <h3>{movie.original_title}</h3>
+            
+            <div className="container-overview">
+                <h2 className="title-movie-details">{movie.original_title}</h2>
+                <h3 className="title-overview">Overview</h3>
+                <p className="paragraph-overview">{movie.overview}</p>
+                <button className="button-back" type="button">Back to search</button>
+            </div>
+            
+
         </div>
+        
+
     )
 }
 
