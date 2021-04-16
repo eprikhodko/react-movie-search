@@ -2,9 +2,9 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 
-function SearchMovies(props) {
+function SearchMovies({movies, searchMovies, query, handleChange}) {
 
-    const movieCards = props.movies.filter(movie => movie.poster_path).map(movie => (
+    const movieCards = movies.filter(movie => movie.poster_path).map(movie => (
             <div className="movie-card" key={movie.id}>
                 <img className="movie-card-image"
                     src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
@@ -22,15 +22,15 @@ function SearchMovies(props) {
   
     return (
         <div className="container-search">
-            <form className="form" onSubmit={props.searchMovies}>
+            <form className="form" onSubmit={searchMovies}>
                 <label className="label" htmlFor="query">Movie Name</label>
                 <input 
                     className="search-input" 
                     type="text" 
                     name="query"
                     placeholder="i.e. Star Wars" 
-                    value={props.query} 
-                    onChange={props.handleChange}
+                    value={query} 
+                    onChange={handleChange}
                 />
                 <button className="search-button" type="submit">Search</button>
             </form>

@@ -6,8 +6,6 @@ import {Switch, Route} from "react-router-dom"
 
 const MY_KEY = process.env.REACT_APP_API_KEY
 
-
-
 function App() {
 
     const [query, setQuery] = useState("")
@@ -56,7 +54,7 @@ function App() {
                         </div>
                     </Route>
                     <Route exact path={`/:movieId`}>
-                        <MovieDetails movies={movies}/>
+                        <MovieDetails />
                     </Route>
             </Switch>
         </div>
