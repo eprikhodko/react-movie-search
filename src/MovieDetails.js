@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 
 import "./MovieDetails.css"
 
@@ -9,6 +9,9 @@ const MY_KEY = process.env.REACT_APP_API_KEY
 function MovieDetails() {
     const params = useParams()  
     const movieId = parseInt(params.movieId)
+
+    const history = useHistory()
+    console.log(history)
 
     const [movie, setMovie] = useState([])
 
@@ -29,6 +32,8 @@ function MovieDetails() {
         getMovieDetails()
       }, []) 
 
+      const handleClick = () => {history.goBack()}
+
     return (
         <div className="container-movie-details">
             
@@ -47,7 +52,7 @@ function MovieDetails() {
                 <h2 className="title-movie-details">{movie.original_title}</h2>
                 <h3 className="title-overview">Overview</h3>
                 <p className="paragraph-overview">{movie.overview}</p>
-                <button className="button-back" type="button">Back to search</button>
+                <button className="button-back" type="button" onClick={handleClick}>Back to search</button>
             </div>
             
 
