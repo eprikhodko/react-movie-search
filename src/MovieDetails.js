@@ -11,7 +11,7 @@ function MovieDetails() {
     const movieId = parseInt(params.movieId)
 
     const history = useHistory()
-    console.log(history)
+    // console.log(history)
 
     const [movie, setMovie] = useState([])
 
