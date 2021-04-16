@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react"
 import {useParams} from "react-router-dom"
 
+import "./MovieDetails.css"
+
 const MY_KEY = process.env.REACT_APP_API_KEY
 
 
-function MovieDetails(props) {
+function MovieDetails() {
     const params = useParams()  
     const movieId = parseInt(params.movieId)
 
@@ -18,7 +20,6 @@ function MovieDetails(props) {
             const response = await fetch(url)
             const data  = await response.json()
             setMovie(data)
-            // console.log(data.original_title)
         } catch(err) {
             console.error(err)
         }
@@ -26,15 +27,15 @@ function MovieDetails(props) {
 
     useEffect(() => {
         getMovieDetails()
-      }, [])
+      }, []) 
 
     return (
-        <div className="container-details">
-            <h1>Some movie details</h1>
-            {/* <h2>{props.movies[0].original_title}</h2> */}
-            <h2>{params.movieId}</h2>
+        <div className="container-movie-details" style={{ 
+            backgroundImage: `url("https://image.tmdb.org/t/p/w1000_and_h450_multi_faces${movie.backdrop_path}")`
+          }}>
+            {/* <h1>Some movie details</h1> */}
+            
             <h3>{movie.original_title}</h3>
-            {/* {console.log(props.movies[0].original_title)} */}
         </div>
     )
 }

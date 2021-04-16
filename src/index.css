@@ -11,6 +11,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -22,8 +23,9 @@ h1 {
   margin: 0;
 }
 
-h3 {
+h2 {
   margin-bottom: 0;
+  /* font-size: 1em; */
 }
 
 .container, header {
@@ -44,6 +46,7 @@ header {
   font-size: 2.9rem;
   text-align: center;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .form {
@@ -58,6 +61,7 @@ header {
   margin-bottom: 0.5em;
   text-transform: uppercase;
   text-align: center; 
+  letter-spacing: 1px;
 }
 
 .search-input,
@@ -138,8 +142,13 @@ input[type=text] {
 }
 
 .movie-title {
-  font-size: 1.4rem;
-  letter-spacing: .6px;
+  font-size: 1.6rem;
+}
+
+
+.movie-title a {
+  text-decoration: none;
+  color: #000;
 }
 
 p {
@@ -180,9 +189,5 @@ p {
   outline-color: transparent;
   outline-width: 2px;
   outline-style: dotted;
-}
-
-.container-search-movies {
-  background-color: green;
 }
 
