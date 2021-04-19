@@ -13,7 +13,6 @@ function SearchMovies({movies, searchMovies, query, handleChange}) {
                         alt={movie.title + " poster"}
                     />
                 
-                
                 <div className="movie-info">
                     <h2 className="movie-title">
                         {movie.title}
@@ -21,6 +20,7 @@ function SearchMovies({movies, searchMovies, query, handleChange}) {
                     <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
                     <p className="movie-overview">{movie.overview}</p>
                 </div>
+                
             </div>
         </Link>
         ))

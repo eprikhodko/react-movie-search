@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import SearchMovies from "./SearchMovies"
 import MovieDetails from "./MovieDetails"
 
-import {Switch, Route} from "react-router-dom"
+import {Switch, Route, Link} from "react-router-dom"
 
 const MY_KEY = process.env.REACT_APP_API_KEY
 
@@ -40,8 +40,11 @@ function App() {
 
     return (
         <div>
-            <Header />
-        
+            
+            <Link to={`/`}>
+                <Header />
+            </Link>
+            
             <Switch>
                     <Route exact path="/">
                         <div className="container">
