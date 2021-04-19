@@ -33,15 +33,16 @@ h2 {
 }
 
 .container {
-  margin: 0 auto;
+  width: 95%;
   max-width: 1000px;
+  margin: 0 auto;
 }
 
 header {
   background-color: rgb(214, 214, 214);
 }
 
-.title {
+.site-title {
   margin-top: 0;
   font-size: 2.9rem;
   text-align: center;
@@ -102,7 +103,7 @@ input[type=text] {
 
 .button-search {
   background-color: #f18119;
-  color: white;
+  color: #fff;
   padding: .6em 2em;
   border: 0;
   font-size: 1.8rem;
@@ -111,7 +112,7 @@ input[type=text] {
 }
 
 .button-search:hover {
-  background-color: rgba(0,0,0,0.15);
+  background-color: #404040;
 }
 
 .button-search:focus {
@@ -171,25 +172,61 @@ p {
 }
 
 @media (min-width:786px){
+  .site-title {
+      /* margin-top: 0; */
+      font-size: 4rem;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #404040;
+  }
+
   .form {
-      /* grid-template-columns: auto 1fr auto;
-      grid-gap: 1rem;
-      align-items: center; */
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
   }
   
-  .input {
-      margin-bottom: 0;
+  .input, input[type=text] {
+      margin: 0;
+      margin-right: 1em;
+      width: 80%;
   }
+
+  .label {
+    font-size: 1.3rem;
+    margin: 0;
+    width: 15%;
+    /* margin-right: 1em; */
+    text-align: left;
+    /* padding-right: 5em; */
+  }
+
+  .movie-card-image {
+    margin-right: 1.5em;
+  }
+  
+  .movie-overview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-right: 1em;
+    font-size: 1.4rem;
+  }
+
 }
 
-/* :focus {
-  outline: 0;
-  } */
 
 :focus {
   /* Visible in Windows high-contrast themes */
   outline-color: transparent;
   outline-width: 2px;
   outline-style: dotted;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 

@@ -5,22 +5,24 @@ import {Link} from "react-router-dom"
 function SearchMovies({movies, searchMovies, query, handleChange}) {
 
     const movieCards = movies.filter(movie => movie.poster_path).map(movie => (
+        <Link to={`/${movie.id}`}>
             <div className="movie-card" key={movie.id}>
-                <Link to={`/${movie.id}`}>
+                
                     <img className="movie-card-image"
                         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                         alt={movie.title + " poster"}
                     />
-                </Link>
+                
                 
                 <div className="movie-info">
                     <h2 className="movie-title">
-                        <Link to={`/${movie.id}`}>{movie.title}</Link>
+                        {movie.title}
                     </h2>
                     <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
                     <p className="movie-overview">{movie.overview}</p>
                 </div>
             </div>
+        </Link>
         ))
   
     return (

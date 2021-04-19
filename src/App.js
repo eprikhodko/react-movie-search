@@ -64,7 +64,7 @@ function App() {
 function Header() {
     return (
         <header>
-            <h1 className="title">React Movie Search</h1>
+            <h1 className="site-title">React Movie Search</h1>
         </header>
     )
 }
