@@ -50,3 +50,39 @@
     background-color: #404040;
     border: 0;
 }
+
+@media (min-width:700px) {
+
+    .container-movie-backdrop {
+        padding: 25em;
+        background-position: center;
+        background-color: #848484;
+        background-blend-mode: multiply;
+    }
+
+    .container-overview {
+        width: 95%;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .title-movie-details {
+        font-size: 4rem;
+    }
+    
+    .title-overview {
+        font-size: 2rem;
+    }
+
+    .paragraph-overview {
+        font-size: 2.2rem;
+        margin-bottom: 2em;
+    }
+
+    .movie-poster {
+        display: none;
+    }
+}

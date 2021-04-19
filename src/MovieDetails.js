@@ -41,7 +41,7 @@ function MovieDetails() {
             backgroundImage: `url("https://image.tmdb.org/t/p/w1000_and_h450_multi_faces${movie.backdrop_path}")`
           }}>
 
-                <img className="movie-poster"
+                <img className="movie-poster poster-none"
                     src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                     alt={movie.title + " poster"}
                 />            
