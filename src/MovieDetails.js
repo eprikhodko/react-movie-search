@@ -6,17 +6,15 @@ import "./MovieDetails.css"
 const MY_KEY = process.env.REACT_APP_API_KEY
 
 
-function MovieDetails() {
+const MovieDetails = () => {
     const params = useParams()  
     const movieId = parseInt(params.movieId)
 
     const history = useHistory()
-    // console.log(history)
 
     const [movie, setMovie] = useState([])
 
     const getMovieDetails = async (event) => {
-
         const url = `https://api.tmdb.org/3/movie/${movieId}?api_key=${MY_KEY}&language=en-US`;
         
         try {
@@ -54,7 +52,6 @@ function MovieDetails() {
                 <p className="paragraph-overview">{movie.overview}</p>
                 <button className="button-back" type="button" onClick={handleClick}>Back to search</button>
             </div>
-            
 
         </div>
         

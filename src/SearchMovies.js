@@ -1,8 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-
-function SearchMovies({movies, searchMovies, query, handleChange}) {
+const SearchMovies = ({movies, searchMovies, query, handleChange}) => {
 
     const movieCards = movies.filter(movie => movie.poster_path).map(movie => (
         <Link to={`/${movie.id}`}>
@@ -20,7 +19,7 @@ function SearchMovies({movies, searchMovies, query, handleChange}) {
                     <p className="release-date">Release year: {movie.release_date.slice(0, 4)}</p>
                     <p className="movie-overview">{movie.overview}</p>
                 </div>
-                
+
             </div>
         </Link>
         ))

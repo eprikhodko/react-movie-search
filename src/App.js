@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+
 import Header from "./Header"
 import SearchMovies from "./SearchMovies"
 import MovieDetails from "./MovieDetails"
@@ -13,7 +14,6 @@ const App = () => {
     const [movies, setMovies] = useState([])
 
     const handleChange = event => {
-        // console.log(event.target.value)
         return setQuery(event.target.value)
     }
 
@@ -41,7 +41,6 @@ const App = () => {
 
     return (
         <div>
-
             <Link to={`/`}>
                 <Header />
             </Link>
