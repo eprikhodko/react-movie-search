@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import Header from "./Header"
 import SearchMovies from "./SearchMovies"
 import MovieDetails from "./MovieDetails"
 
@@ -6,7 +7,7 @@ import {Switch, Route, Link} from "react-router-dom"
 
 const MY_KEY = process.env.REACT_APP_API_KEY
 
-function App() {
+const App = () => {
 
     const [query, setQuery] = useState("")
     const [movies, setMovies] = useState([])
@@ -40,7 +41,7 @@ function App() {
 
     return (
         <div>
-            
+
             <Link to={`/`}>
                 <Header />
             </Link>
@@ -61,14 +62,6 @@ function App() {
                     </Route>
             </Switch>
         </div>
-    )
-}
-
-function Header() {
-    return (
-        <header>
-            <h1 className="site-title">React Movie Search</h1>
-        </header>
     )
 }
 
